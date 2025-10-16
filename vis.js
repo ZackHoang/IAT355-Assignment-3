@@ -84,7 +84,8 @@ let salesOverTimeByGenreAndPlatformSpec = {
           { field: 'Platform', type: 'quantitative', aggregate: 'count' }
         ]
     }
-  }
+  },
+  title: 'Genre and Platform Sales by Year'
 }
 
 let regionalSalesVersusPlatformSpec = {
