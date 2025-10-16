@@ -10,7 +10,7 @@ let averageGlobalSalesPerYearSpec = {
     mark: 'bar',
     encoding: {
       x: {field: 'Year', type: 'ordinal'},
-      y: {field: 'Global_Sales', type: 'quantitative', aggregate: "average"},
+      y: {field: 'Global_Sales', type: 'quantitative', aggregate: "mean"},
       tooltip: [
         { field: 'Year' },
         { field: 'Global_Sales' }
