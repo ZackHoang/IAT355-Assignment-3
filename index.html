@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/vega@6.2.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@7.0.2"></script>
+    <script type="module" src="vis.js"></script>
+    <title>IAT355-Assignment3</title>
+</head>
+<body>
+    <header>
+        <h1>IAT 355 Assignment 3: Intro To Vegalite</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Data Description</h2>
+            <h3>Data Types</h3>
+            <table>
+                <tr>
+                    <th>Data</th>
+                    <th>Type</th>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>Nominal</td>
+                </tr>
+                <tr>
+                    <td>Platform</td>
+                    <td>Nominal</td>
+                </tr>
+                <tr>
+                    <td>Year</td>
+                    <td>Temporal</td>
+                </tr>
+                <tr>
+                    <td>Genre</td>
+                    <td>Nominal</td>
+                </tr>
+                <tr>
+                    <td>Publisher</td>
+                    <td>Nominal</td>
+                </tr>
+                <tr>
+                    <td>NA_Sales</td>
+                    <td>Quantitative</td>
+                </tr>
+                <tr>
+                    <td>EU_Sales</td>
+                    <td>Quantitative</td>
+                </tr>
+                <tr>
+                    <td>JP_Sales</td>
+                    <td>Quantitative</td>
+                </tr>
+                <tr>
+                    <td>Other_Sales</td>
+                    <td>Quantitative</td>
+                </tr>
+                <tr>
+                    <td>Global_Sales</td>
+                    <td>Quantitative</td>
+                </tr>
+            </table>
+            <h3>Data Summary</h3>
+            <div class="chart" id="average-global-sales-per-year"></div>
+            <div class="chart" id="most-frequent-genre"></div>
+            <div class="chart" id="most-popular-platform"></div>
+        </section> 
+        <section>
+            <h2>Data Visualization</h2>
+            <h3>Visualization 1</h3>
+            <div class="chart" id="global-sales-by-genre-and-platform"></div>
+            <h3>Visualization 2</h3>
+            <div class="chart" id="sales-over-time-by-genre-and-platform"></div>
+            <h3>Visualization 3</h3>
+            <div class="chart" id="regional-sales-versus-platform"></div>
+            <h3>Visualization 4</h3>
+            <div class="chart" id="year-versus-genre"></div>
+        </section>
+    </main>
+</body>
+</html>
