@@ -119,7 +119,10 @@ let yearVersusGenreSpec = {
     encoding: {
         x: { field: 'Year', type: 'ordinal' },
         y: { field: 'Genre', type: 'nominal', aggregate: 'count' },
-        color: { field: 'Genre', type: 'nominal' }
+        color: { field: 'Genre', type: 'nominal' },
+        tooltip: [
+          { field: "Platform", type: 'quantitative', aggregate: 'count' }
+        ]
     },
     title: 'Number of Games by Genre by Year'
 }
