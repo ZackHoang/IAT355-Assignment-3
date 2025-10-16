@@ -11,8 +11,12 @@ let averageGlobalSalesPerYearSpec = {
     encoding: {
       x: {field: 'Year', type: 'ordinal'},
       y: {field: 'Global_Sales', type: 'quantitative', aggregate: "average"},
+      tooltip: [
+        { field: 'Year' },
+        { field: 'Global_Sales' }
+      ]
     },
-    title: "Average Global Sales Per Year"
+    title: "Average Global Sales Per Year",
 };
 
 let mostFrequentGenresSpec = {
@@ -23,7 +27,10 @@ let mostFrequentGenresSpec = {
     mark: 'bar',
     encoding: {
         x: {field: 'Genre', type: 'quantitative', aggregate: "count"},
-        y: {field: 'Genre', type: 'nominal'}
+        y: {field: 'Genre', type: 'nominal', sort: '-x'},
+        tooltip: [
+          { field: 'Genre', type: 'quantitative', aggregate: 'count' },
+        ]
     }, 
     title: "Number of Categories"
 }
@@ -36,7 +43,10 @@ let mostPopularPlatformSpec = {
     mark: 'bar',
     encoding: {
         x: {field: 'Platform', type: 'quantitative', aggregate: 'count'},
-        y: {field: 'Platform', type: 'nominal'}
+        y: {field: 'Platform', type: 'nominal', sort: '-x'},
+        tooltip: [
+          { field: 'Platform', type: 'quantitative', aggregate: 'count' }
+        ]
     },
     title: "Number of Platforms"
 }
@@ -48,9 +58,12 @@ let globalSalesByGenreAndPlatformSpec = {
   },
   mark: 'bar',
   encoding: {
-    x: {field: 'Genre', type: 'nominal', axis: {labelAngle: -45}}, 
+    x: {field: 'Genre', type: 'nominal', axis: {labelAngle: -45}, sort: '-y'}, 
     y: {field: 'Global_Sales', type: 'quantitative', aggregate: 'sum'},
     color: {field: 'Platform', type: 'nominal'},
+    tooltip: [
+      { field: 'Platform', type: 'quantitative', aggregate: 'count' }
+    ]
   }, 
   title: "Global Sales by Platform and Genre"
 }
@@ -66,7 +79,10 @@ let salesOverTimeByGenreAndPlatformSpec = {
     encoding: {
         x: {field: 'Year', type: 'nominal', timeUnit: "year"},
         y: {field: 'Global_Sales', type: 'quantitative', aggregate: "sum"},
-        color: {field: "Platform", type: "nominal"}
+        color: {field: "Platform", type: "nominal"},
+        tooltip: [
+          { field: 'Platform', type: 'quantitative', aggregate: 'count' }
+        ]
     }
   }
 }
@@ -83,7 +99,7 @@ let regionalSalesVersusPlatformSpec = {
   ],
   mark: 'bar',
   encoding: {
-    x: { field: "Platform", type: "nominal", axis: { labelAngle: -45 } },
+    x: { field: "Platform", type: "nominal", axis: { labelAngle: -45 }, sort: 'y' },
     y: { field: "Sales", type: "quantitative", aggregate: "sum" },
     color: { field: "Region", type: "nominal" },
     tooltip: [
